@@ -1,3 +1,25 @@
 body {
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.image {
+    height: 100px;
+    width: auto;
+}
+
+table {
+    border: 5px red solid;
+    margin: auto;
+    padding: 10px;
+}
+
+.roll {
+    border: 3px black solid;
+    margin: 5px;
+}
+
+td {
+    border: 3px black solid;
+    text-align: center;
+    padding: 5px;
 }

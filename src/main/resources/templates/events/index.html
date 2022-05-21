@@ -5,11 +5,35 @@
 
 <header th:replace="fragments :: header"></header>
 
-<ul>
-    <th:block th:each="event : ${events}">
-        <li th:text="${event}"></li>
-    </th:block>
-</ul>
+    <table>
+        <tr class="roll">
+            <th>Event</th>
+            <th>Description</th>
+            <th>Address</th>
+            <th>Picture</th>
+        </tr>
+
+        <th:block th:each="item : ${events.keySet()}">
+            <tr class="roll">
+                <td th:text="${item}">event name</td>
+                <td th:text="${events.get(item)}">event detail</td>
+
+                <th:block th:if="${item.equals('Javascripty')}">
+                    <td th:replace="fragments2 :: address1">event address</td>
+                    <td><img th:src="@{/image/bruno.PNG}" class="image"/></td>
+                </th:block>
+                <th:block th:if="${item.equals('Code With Pride')}">
+                    <td th:replace="fragments2 :: address2">event address</td>
+                    <td><img th:src="@{/image/wintergarden.PNG}" class="image"/></td>
+                </th:block>
+                <th:block th:if="${item.equals('Menteaship')}">
+                    <td th:replace="fragments2 :: address3">event address</td>
+                    <td><img th:src="@{/image/waterman.PNG}" class="image"/></td>
+                </th:block>
+            </tr>
+        </th:block>
+    </table>
+</th:block>
 
 </body>
 </html>
